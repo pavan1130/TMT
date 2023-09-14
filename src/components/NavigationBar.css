@@ -1,0 +1,68 @@
+/* NavigationBar.css */
+.navbar {
+    display: flex;
+    height: 50px;
+    padding: 10px 20px;
+    background-color:#fff; /* Adjust the background color as needed */
+    color: #fff; /* Text color */
+  }
+  
+  .search_bar {
+    align-items: center;
+    max-width: 100px;/* Adjust the search bar width as needed */
+    nav-right: auto;
+    margin-left: 900px;
+  }
+  .form {
+    display: flex;
+    justify-content: flex-end; /* Push the form to the right */
+    align-items: center; /* Vertically center the form */
+  }
+  
+  .form-control {
+    /* Add any additional styles you want for the input */
+    padding: 0.25rem;
+    margin-right: 0.5rem; /* Add spacing between the input and button */
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+  }
+  
+  .btn {
+    /* Add any additional styles you want for the button */
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #6c757d;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+  }
+  
+  /* Style the button when hovering */
+  .btn:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .user-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 24px; /* Adjust the icon size as needed */
+    margin-right: 10px;
+  }
+  
+  .user-avatar {
+    background-color: #fff; /* Background color for the avatar */
+    width: 36px; /* Avatar width */
+    height: 36px; /* Avatar height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Make it circular */
+    font-size: 18px; /* Adjust the avatar icon size as needed */
+    cursor: pointer;
+  }
+  

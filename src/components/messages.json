@@ -1,0 +1,19 @@
+
+[
+    {
+      "userProfile": "https://cdn4.iconfinder.com/data/icons/green-shopper/1068/user.png",
+      "username": "User1",
+      "text": "Hello, how are you?"
+    },
+    {
+      "userProfile": "https://cdn4.iconfinder.com/data/icons/green-shopper/1068/user.png",
+      "username": "User2",
+      "text": "I'm doing well, thanks!"
+    },
+    {
+      "userProfile": "https://cdn4.iconfinder.com/data/icons/green-shopper/1068/user.png",
+      "username": "User3",
+      "text": "Great to hear!"
+    }
+  ]
+  

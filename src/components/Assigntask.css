@@ -1,0 +1,35 @@
+/* AssignTask.css */
+
+/* Style the form container */
+.form-container {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  /* Style the form */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  /* Style the text fields */
+  .text-field {
+    width: 100%;
+  }
+  
+  /* Style the Cancel and Submit buttons */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn-cancel {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .btn-submit {
+    background-color: #007bff;
+    color: #fff;
+  }
