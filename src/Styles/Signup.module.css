@@ -9,7 +9,7 @@ p {
 
 /* Set up background image */
 .background-image {
-  background-image: url('../images/2.png'); /* Replace with your image path */
+  background-image: url("../images/2.png"); /* Replace with your image path */
   background-position: center;
   position: fixed;
   top: 0;
@@ -34,7 +34,7 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
-  flex-direction: column; /* Center children vertically */
+  flex-direction: column;
   justify-content: center; /* Center children horizontally */
 }
 
@@ -55,7 +55,7 @@ p {
 .form-group label {
   margin-bottom: 6px;
   color: #666666;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .input-field {
@@ -80,60 +80,61 @@ p {
 }
 
 .submit-button:hover {
-  background-color: #0056b3;
+  background-color: #b2b2b2;
 }
 
 .horizontal-line-container {
-    display: flex;
-    align-items: center;
-    margin-top: 20px; /* Adjust spacing */
-  }
-  
-  .horizontal-line {
-    flex-grow: 1;
-    height: 1px;
-    background-color: #5f5c5c; /* Thin line color */
-  }
+  display: flex;
+  align-items: center;
+  margin-top: 20px; /* Adjust spacing */
+}
+
+.horizontal-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #5f5c5c; /* Thin line color */
+}
 /* OR divider */
 .or {
   margin: 20px 0;
   font-size: 14px;
+  position: relative;
+  top: -20px;
 }
 
-/* Google button */
+.google-button {
+  position: relative;
+  top: -30px;
+}
+
 .google-button-inner {
   background-color: #fff;
-  color: #000;
-  border: 1px solid #000;
+  border: 1px solid #ccc;
   border-radius: 40px;
   padding: 12px 12px;
-  font-size: 12px;
+  width: 400px;
+  font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  text-decoration: none;
-  width: 445px;
-  height: 40px;
+  display: flex;
   align-items: center;
-  margin-top: auto;
-  display: flex; /* Center children vertically */
-  justify-content: center; /* Center children horizontally */
+  justify-content: center;
+  color: #767777; /* Text color for the Google button */
 }
 
 .google-button-inner:hover {
-  background-color: #ccc;
+  border: 1px solid #787878;
+  background-color: #f1f1f1; /* Background color on hover */
 }
 
-/* Signup link */
-.signup-link p {
-  margin-top: 20px;
-  font-size: 14px;
+/* Adjust the icon color */
+.google-button-inner .fa-google {
+  color: #6f6f6f;
+  margin-right: 10px;
 }
 
-.signup-link a {
-  text-decoration: none;
-  color: #007bff;
-}
-
-.signup-link a:hover {
-  text-decoration: underline;
+.Signin-text {
+  font-size: 16px;
+  position: absolute;
+  top: 35px;
+  left: 55%;
 }

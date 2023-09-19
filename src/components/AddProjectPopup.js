@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './AddProjectPopup.css';
+import React, { useState } from "react";
+import "../Styles/AddProjectPopup.css";
 const AddProjectPopup = ({ onClose, onAddProject }) => {
-  const [projectName, setProjectName] = useState('');
-  const [projectId, setProjectId] = useState('');
-  const [projectDate, setProjectDate] = useState('');
+  const [projectName, setProjectName] = useState("");
+  const [projectId, setProjectId] = useState("");
+  const [projectDate, setProjectDate] = useState("");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -19,9 +19,9 @@ const AddProjectPopup = ({ onClose, onAddProject }) => {
     onAddProject(newProject);
 
     // Clear the form fields
-    setProjectName('');
-    setProjectId('');
-    setProjectDate('');
+    setProjectName("");
+    setProjectId("");
+    setProjectDate("");
 
     // Close the popup
     onClose();
@@ -31,9 +31,8 @@ const AddProjectPopup = ({ onClose, onAddProject }) => {
     <div className="popup">
       <div className="popup-content">
         <div className="popup-header">
-          <h2>Add Project</h2>
           <button className="popup-close" onClick={onClose}>
-            Cancel
+            X
           </button>
         </div>
         <form onSubmit={handleFormSubmit}>
@@ -64,7 +63,7 @@ const AddProjectPopup = ({ onClose, onAddProject }) => {
               onChange={(e) => setProjectDate(e.target.value)}
             />
           </div>
-          <button type="submit">Add</button>
+          <button className="add-button">Submit</button>
         </form>
       </div>
     </div>

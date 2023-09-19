@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import './DetailsPopup.css';
+import React, { useState } from "react";
+import "../Styles/DetailsPopup.css";
 
 const DetailsPopup = ({ project, onClose }) => {
-  const [projectDesignLink, setProjectDesignLink] = useState('');
-  const [clientName, setClientName] = useState('');
-  const [assignedTo, setAssignedTo] = useState('');
-  const [status, setStatus] = useState('Not Started');
+  const [projectDesignLink, setProjectDesignLink] = useState("");
+  const [clientName, setClientName] = useState("");
+  const [assignedTo, setAssignedTo] = useState("");
+  const [status, setStatus] = useState("Not Started");
   const [attachments, setAttachments] = useState([]);
 
   const handleProjectDesignLinkChange = (e) => {
@@ -71,7 +71,12 @@ const DetailsPopup = ({ project, onClose }) => {
             required
           />
           <label htmlFor="status">Status:</label>
-          <select id="status" value={status} onChange={handleStatusChange} required>
+          <select
+            id="status"
+            value={status}
+            onChange={handleStatusChange}
+            required
+          >
             <option value="Not Started">Not Started</option>
             <option value="In Progress">In Progress</option>
             <option value="Completed">Completed</option>
@@ -85,7 +90,11 @@ const DetailsPopup = ({ project, onClose }) => {
           />
           {attachments.map((attachment, index) => (
             <div key={index}>
-              <a href={URL.createObjectURL(attachment)} target="_blank" rel="noopener noreferrer">
+              <a
+                href={URL.createObjectURL(attachment)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Attachment {index + 1}
               </a>
             </div>

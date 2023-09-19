@@ -1,6 +1,6 @@
-import React from 'react';
-import messagesData from './messages.json';
-import './messages.css'; 
+import React from "react";
+import messagesData from "./messages.json";
+import "../Styles/messages.css";
 const Messages = () => {
   return (
     <div className="messages-container">

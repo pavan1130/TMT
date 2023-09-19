@@ -1,9 +1,27 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaHome, FaTasks, FaEye, FaEnvelope, FaUsers, FaCog, FaSignOutAlt, FaMoon } from 'react-icons/fa';
-import { List, ListItem, ListItemIcon, ListItemText, Switch, Button, Typography,Divider } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import './Sidebar.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import {
+  FaHome,
+  FaTasks,
+  FaEye,
+  FaEnvelope,
+  FaUsers,
+  FaCog,
+  FaSignOutAlt,
+  FaMoon,
+} from "react-icons/fa";
+import {
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Switch,
+  Button,
+  Typography,
+  Divider,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import "../Styles/Sidebar.css";
 
 const Sidebar = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -14,21 +32,21 @@ const Sidebar = () => {
   };
 
   const CustomListItemIcon = styled(ListItemIcon)({
-    minWidth: '40px',
+    minWidth: "40px",
   });
 
   return (
-    <div className={`sidebar ${darkMode ? 'dark' : ''}`}>
+    <div className={`sidebar ${darkMode ? "dark" : ""}`}>
       <div className="sidebar_header">
-        <br/>
-      <Typography variant="h6" color="black" >
-          Task Management  Collaboration Tool
+        <br />
+        <Typography variant="h6" color="black">
+          Task Management Collaboration Tool
         </Typography>
-        <br/>
-      <Divider/>
-      <br/>
+        <br />
+        <Divider />
+        <br />
         <List>
-          <ListItem component={Link} to="/" button>
+          <ListItem component={Link} to="/home" button>
             <CustomListItemIcon>
               <FaHome />
             </CustomListItemIcon>
@@ -67,8 +85,12 @@ const Sidebar = () => {
         </List>
       </div>
       <div className="bottom-buttons">
-        
-        <Button className="logout-button" id="custom-logout-button" variant="contained" color="secondary">
+        <Button
+          className="logout-button"
+          id="custom-logout-button"
+          variant="contained"
+          color="secondary"
+        >
           <CustomListItemIcon>
             <FaSignOutAlt />
           </CustomListItemIcon>

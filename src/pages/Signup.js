@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import './Signup.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import React, { useState } from "react";
+import styles from "../Styles/Signup.module.css"; // Import the CSS module
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 function Signup() {
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
-    confirmpassword: '',
+    email: "",
+    password: "",
+    confirmpassword: "",
   });
 
   const handleChange = (e) => {
@@ -43,23 +43,24 @@ function Signup() {
       console.error(error);
     }
   };
+
   const handleGoogleSignIn = () => {
     // Perform Google sign-in logic here
     // You might use a library like Firebase for this purpose
-    console.log('Google sign-in clicked');
+    console.log("Google sign-in clicked");
     // You can implement Google sign-in using Firebase or another library
   };
 
   return (
-    <div className="App">
+    <div className={styles.App}>
       {/* Background Image */}
-      <div className="background-image"></div>
+      <div className={styles["background-image"]}></div>
 
       {/* Signup Container */}
-      <div className="signup-container">
+      <div className={styles["signup-container"]}>
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className={styles["form-group"]}>
             <label>Email</label>
             <input
               type="email"
@@ -67,10 +68,10 @@ function Signup() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="input-field"
+              className={styles["input-field"]}
             />
           </div>
-          <div className="form-group">
+          <div className={styles["form-group"]}>
             <label>Password</label>
             <input
               type="password"
@@ -78,10 +79,10 @@ function Signup() {
               value={formData.password}
               onChange={handleChange}
               required
-              className="input-field"
+              className={styles["input-field"]}
             />
           </div>
-          <div className="form-group">
+          <div className={styles["form-group"]}>
             <label>Confirm Password</label>
             <input
               type="password"
@@ -89,30 +90,38 @@ function Signup() {
               value={formData.confirmpassword}
               onChange={handleChange}
               required
-              className="input-field"
+              className={styles["input-field"]}
             />
           </div>
-          <button type="submit" 
-          className="submit-button"
-          onClick={handleSubmit}>
+          <button
+            type="submit"
+            className={styles["submit-button"]}
+            onClick={handleSubmit}
+          >
             Sign Up
           </button>
         </form>
-        <div className="horizontal-line-container">
-        <div className="horizontal-line"></div>
-        <div className="or">
-          <span>OR</span>
+        <div className={styles["horizontal-line-container"]}>
+          <div className={styles["horizontal-line"]}></div>
+          <div className={styles.or}>
+            <span>OR</span>
+          </div>
+          <div className={styles["horizontal-line"]}></div>
         </div>
-        <div className="horizontal-line"></div>
-        </div>
-        <div className="google-button">
+        <div className={styles["google-button"]}>
           <button
             type="button"
-            className="google-button-inner"
+            className={styles["google-button-inner"]}
             onClick={handleGoogleSignIn}
           >
-              <FontAwesomeIcon icon={faGoogle} size="2x" color="#4285F4" /> Continue with Google
+            <FontAwesomeIcon icon={faGoogle} size="2x" color="#4285F4" />{" "}
+            Continue with Google
           </button>
+          <div className={styles["Signin-text"]}>
+            <p className={styles["Signin-text"]}>
+              Don’t have an account? <a href="/">Sign In</a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

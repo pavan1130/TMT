@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import { TextField, Select, MenuItem, Button, FormControl, InputLabel, Box,Typography } from '@mui/material';
-import './Assigntask.css';
-
-const Assigntask = () => {
-  const [projectName, setProjectName] = useState('');
-  const [taskDescription, setTaskDescription] = useState('');
-  const [assignee, setAssignee] = useState('Pavan');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+import React, { useState } from "react";
+import {
+  TextField,
+  Select,
+  MenuItem,
+  Button,
+  FormControl,
+  InputLabel,
+  Box,
+} from "@mui/material";
+import NavigationBar from "./NavigationBar";
+import Sidebar from "./Sidebar";
+// import "../Styles/Assigntask.css";
+import "../Styles/App.css";
+const AssignTask = () => {
+  const [projectName, setProjectName] = useState("");
+  const [taskDescription, setTaskDescription] = useState("");
+  const [assignee, setAssignee] = useState("Pavan");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
   const handleProjectNameChange = (e) => {
     setProjectName(e.target.value);
@@ -31,20 +41,18 @@ const Assigntask = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted with the following data:');
-    console.log('Project Name:', projectName);
-    console.log('Task Description:', taskDescription);
-    console.log('Assignee:', assignee);
-    console.log('Start Date:', startDate);
-    console.log('End Date:', endDate);
+    console.log("Form submitted with the following data:");
+    console.log("Project Name:", projectName);
+    console.log("Task Description:", taskDescription);
+    console.log("Assignee:", assignee);
+    console.log("Start Date:", startDate);
+    console.log("End Date:", endDate);
   };
 
   return (
     <div className="form-container">
-      <Typography variant="h6" color="black" >
-          Assign Task
-        </Typography>
-        <br/>
+      <NavigationBar />
+      <Sidebar />
       <form onSubmit={handleSubmit} className="form">
         <Box sx={{ marginBottom: 2 }}>
           <TextField
@@ -115,7 +123,7 @@ const Assigntask = () => {
             }}
           />
         </Box>
-        <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
           <Button type="button" variant="outlined" color="error">
             Cancel
           </Button>
@@ -128,4 +136,4 @@ const Assigntask = () => {
   );
 };
 
-export default Assigntask;
+export default AssignTask;

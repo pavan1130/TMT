@@ -1,0 +1,71 @@
+/* styles.css */
+
+.content-main {
+  padding: 20px;
+  width: 90%;
+  height: 80vh;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  left: -7%;
+  top: 50px;
+}
+.add-project-button {
+  background-color: A0D1ED;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  top: 75px;
+  left: 95%;
+}
+
+/* AddProjectPopup.css */
+.project-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  top: 60px;
+  left: 8%;
+}
+
+.project-card {
+  background-color: #7e92aa;
+  border: 1px solid #d7c1c1;
+  width: calc(50% - 0.5rem); /* Two cards per row with gap in-between */
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+/* Define different colors for the cards using nth-child */
+.project-card:nth-child(2n) {
+  background-color: #2b5075;
+}
+
+.project-card:hover {
+  background-color: #586e85;
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
