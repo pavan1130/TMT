@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
+import NavigationBar from "./NavigationBar";
+import Sidebar from "./Sidebar";
 
 const Users = () => {
   return (
-    <div className="content-main">
-      <h2>Users</h2>
-      <p>This is the Users page content.</p>
-    </div>
+    <>
+      <NavigationBar />
+      <Sidebar />
+      <div className="content-main">
+        <h2>Users</h2>
+        <p>This is the Users page content.</p>
+      </div>
+    </>
   );
 };
 

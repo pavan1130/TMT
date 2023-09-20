@@ -1,11 +1,17 @@
-import React from 'react';
+import React from "react";
+import NavigationBar from "./NavigationBar";
+import Sidebar from "./Sidebar";
 
 const Settings = () => {
   return (
-    <div className="content-main">
-      <h2>Settings</h2>
-      <p>This is the Settings page content.</p>
-    </div>
+    <>
+      <NavigationBar />
+      <Sidebar />
+      <div className="content-main">
+        <h2>Settings</h2>
+        <p>This is the Settings page content.</p>
+      </div>
+    </>
   );
 };
 

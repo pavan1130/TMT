@@ -93,11 +93,7 @@ function Signup() {
               className={styles["input-field"]}
             />
           </div>
-          <button
-            type="submit"
-            className={styles["submit-button"]}
-            onClick={handleSubmit}
-          >
+          <button className={styles["submit-button"]} onClick={handleSubmit}>
             Sign Up
           </button>
         </form>

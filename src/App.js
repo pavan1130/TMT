@@ -13,6 +13,7 @@ import Others from "./components/Others";
 import Comments from "./components/Comments";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Project_Details from "./components/Project_Details";
 function App() {
   return (
     <Router>
@@ -28,6 +29,10 @@ function App() {
         <Route path="/comments" element={<Comments />} />
         <Route path="/users" element={<Users />} />
         <Route path="/settings" element={<Settings />} />
+        <Route
+          path="/projects/:projectId/:projectName/:projectDate"
+          element={<Project_Details />}
+        />
       </Routes>
     </Router>
   );

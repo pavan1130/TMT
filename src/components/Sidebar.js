@@ -84,6 +84,7 @@ const Sidebar = () => {
           </ListItem>
         </List>
       </div>
+
       <div className="bottom-buttons">
         <Button
           className="logout-button"

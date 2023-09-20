@@ -30,7 +30,6 @@
   top: 75px;
   left: 95%;
 }
-
 /* AddProjectPopup.css */
 .project-card-container {
   display: flex;
@@ -51,8 +50,9 @@
   width: calc(50% - 0.5rem); /* Two cards per row with gap in-between */
   height: 100px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Change to column layout */
+  justify-content: space-between; /* Distribute content vertically */
+  align-items: center; /* Center horizontally */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -68,4 +68,24 @@
   background-color: #586e85;
   transform: translateY(-10px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-name {
+  font-size: 26px;
+  color: #ececec;
+  margin-top: 30px; /* Push to the center of the card */
+}
+
+.project-id {
+  font-size: 16px;
+  color: #000000;
+  margin-left: 700px;
+  margin-top: -137px;
+}
+
+.project-date {
+  font-size: 16px;
+  color: #dbf0ff;
+  margin-right: -560px;
+  margin-top: 130px; /* Add margin to the right */
 }

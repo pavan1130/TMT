@@ -44,7 +44,7 @@ const DetailsPopup = ({ project, onClose }) => {
         <button className="cancel-button" onClick={onClose}>
           X
         </button>
-        <h2>Details</h2>
+
         <form onSubmit={handleSubmit}>
           <label htmlFor="projectDesignLink">Project Design Link:</label>
           <input

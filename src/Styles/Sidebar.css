@@ -1,109 +1,109 @@
 /* Sidebar Container */
 .sidebar {
-    width: 240px; /* Set your desired width */
-    height: 100%; /* Set your desired height */
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #fff; /* Set the background color to white */
-    overflow-y: auto;
-  }
-  
-  .sidebar_header {
-    text-align: left; /* Align header text to the left */
-    background-color:  #fff; /* Set the background color to white */
-    padding: 16px;
-  }
-  
-  /* Sidebar Navigation Links */
-  ul {
-    list-style: none; /* Remove list bullets */
-    padding: 0;
-  }
-  
-  li {
-    padding: 10px 0;
-    text-align: left; /* Align text to the left */
-  }
-  
-  /* Sidebar Navigation Links - Icon */
-  li a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  
-  /* Bottom Buttons */
-  .bottom-buttons {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-     /* Background color for the bottom buttons */
-  }
-  
-  /* Dark Mode Toggle */
-  .dark-mode-toggle {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 10px 20px;
-  }
-  
-  .dark-mode-icon {
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  .dark-mode-text {
-    font-size: 16px;
-  }
-  
-  .dark-mode-switch {
-    width: 40px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 20px;
-    margin-left: 10px;
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .dark-mode-slider {
-    width: 18px;
-    height: 18px;
-    background-color: #333;
-    border-radius: 50%;
-    position: absolute;
-    transition: transform 0.3s;
-  }
-  
-  .dark-mode-switch.on .dark-mode-slider {
-    transform: translateX(20px);
-  }
-  
-  /* Logout Button */
-  .logout-button {
-    background-color: #667A8A; /* Background color for the logout button */
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    text-align: left; /* Align text to the left */
-  }
-  
-  /* Hover effect for links and buttons */
-  li a:hover,
-  .logout-button:hover {
-    background-color: #444;
-    transition: background-color 0.3s;
-  }
-  
+  width: 240px; /* Set your desired width */
+  height: 100%; /* Set your desired height */
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: #fff; /* Set the background color to white */
+  overflow-y: auto;
+}
+
+.sidebar_header {
+  text-align: left; /* Align header text to the left */
+  background-color: #fff; /* Set the background color to white */
+  padding: 16px;
+  height: 450px;
+}
+
+/* Sidebar Navigation Links */
+ul {
+  list-style: none; /* Remove list bullets */
+  padding: 0;
+}
+
+li {
+  padding: 10px 0;
+  text-align: left; /* Align text to the left */
+}
+
+/* Sidebar Navigation Links - Icon */
+li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Bottom Buttons */
+.bottom-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  /* Background color for the bottom buttons */
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.dark-mode-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.dark-mode-text {
+  font-size: 16px;
+}
+
+.dark-mode-switch {
+  width: 40px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 20px;
+  margin-left: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-slider {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 50%;
+  position: absolute;
+  transition: transform 0.3s;
+}
+
+.dark-mode-switch.on .dark-mode-slider {
+  transform: translateX(20px);
+}
+
+/* Logout Button */
+.logout-button {
+  background-color: #667a8a; /* Background color for the logout button */
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  text-align: left; /* Align text to the left */
+}
+
+/* Hover effect for links and buttons */
+li a:hover,
+.logout-button:hover {
+  background-color: #444;
+  transition: background-color 0.3s;
+}

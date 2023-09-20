@@ -1,14 +1,16 @@
 import React, { useState } from "react";
+import { Link, useParams } from "react-router-dom"; // Import Link and useParams
 import AddProjectPopup from "./AddProjectPopup";
-import DetailsPopup from "./DetailsPopup";
+
 import "../Styles/Projects.css";
 import NavigationBar from "./NavigationBar";
 import Sidebar from "./Sidebar";
 import "../Styles/App.css";
+
 const Projects = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null); // Add state for the selected project
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -42,24 +44,21 @@ const Projects = () => {
       </div>
       <div className="project-card-container">
         {projects.map((project, index) => (
-          <div
+          <Link
+            to={`/projects/${project.id}/${encodeURIComponent(
+              project.name
+            )}/${encodeURIComponent(project.date)}`}
             className="project-card"
             key={index}
-            onClick={() => openDetailsPopup(project)}
           >
-            <h3>{project.name}</h3>
-            <p>ID: {project.id}</p>
-            <p>Date: {project.date}</p>
-          </div>
+            <h3 className="project-name">{project.name}</h3>
+            <p className="project-id">ID: {project.id}</p>
+            <p className="project-date">Date: {project.date}</p>
+          </Link>
         ))}
       </div>
       {isPopupOpen && (
         <AddProjectPopup onClose={closePopup} onAddProject={onAddProject} />
-      )}
-
-      {/* Render the DetailsPopup when a project is selected */}
-      {selectedProject && (
-        <DetailsPopup project={selectedProject} onClose={closeDetailsPopup} />
       )}
     </div>
   );

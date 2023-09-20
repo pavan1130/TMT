@@ -85,7 +85,7 @@ const Login = ({ onLogin }) => {
           <div className={styles["forgot-password"]}>
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" className={styles["login-button"]}>
+          <button className={styles["login-button"]}>
             <Link to="/home">
               <p>Sign In</p>
             </Link>
