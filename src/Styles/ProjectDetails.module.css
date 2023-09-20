@@ -62,3 +62,9 @@
   width: 60%; /* Adjust data column width */
   text-align: left; /* Left-align data */
 }
+
+.projectsubmit-details-text {
+  position: absolute;
+  top: 190px;
+  left: 40%;
+}

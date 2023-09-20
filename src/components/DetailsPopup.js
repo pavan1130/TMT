@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../Styles/DetailsPopup.css";
 
-const DetailsPopup = ({ project, onClose }) => {
+const DetailsPopup = ({ project, onClose, onSubmit }) => {
   const [projectDesignLink, setProjectDesignLink] = useState("");
   const [clientName, setClientName] = useState("");
   const [assignedTo, setAssignedTo] = useState("");
@@ -32,7 +32,16 @@ const DetailsPopup = ({ project, onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here, e.g., send the data to a server
+    // Create an object with the form data
+    const formData = {
+      projectDesignLink,
+      clientName,
+      assignedTo,
+      status,
+      attachments,
+    };
+    // Call the onSubmit callback with the data
+    onSubmit(formData);
 
     // Close the popup
     onClose();
