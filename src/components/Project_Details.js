@@ -59,22 +59,28 @@ function Project_Details() {
         />
       )}
       {submittedData && (
-        <div className={styles["projectsubmit-details-text"]}>
-          <h3>Submitted Data:</h3>
-          <p>
-            <strong>Project Design Link:</strong>{" "}
-            {submittedData.projectDesignLink}
-          </p>
-          <p>
+        <div className={`${styles["projectsubmit-details-text"]}`}>
+          <p className={`${styles["class-name-2"]}`}>
             <strong>Client Name:</strong> {submittedData.clientName}
           </p>
-          <p>
+          <p className={`${styles["class-name-3"]}`}>
             <strong>Assigned To:</strong> {submittedData.assignedTo}
           </p>
-          <p>
+          <p className={`${styles["class-name-4"]}`}>
             <strong>Status:</strong> {submittedData.status}
           </p>
-          <p>
+          <p className={`${styles["class-name-1"]}`}>
+            <strong>Project Design Link:</strong>{" "}
+            <a
+              href={submittedData.projectDesignLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {submittedData.projectDesignLink}
+            </a>
+          </p>
+
+          <p className={`${styles["class-name-5"]}`}>
             <strong>Attachments:</strong>
             {submittedData.attachments.map((attachment, index) => (
               <div key={index}>
@@ -83,7 +89,7 @@ function Project_Details() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Attachment {index + 1}
+                  {attachment.name || `Attachment ${index + 1}`}
                 </a>
               </div>
             ))}

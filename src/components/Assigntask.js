@@ -16,6 +16,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import "../Styles/Assigntask.css";
+import { jsPDF } from "jspdf";
+import autoTable from "jspdf-autotable";
+
+import * as XLSX from "xlsx";
 const AssignTask = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [projectId, setProjectId] = useState("");
@@ -24,7 +28,8 @@ const AssignTask = () => {
   const [assignee, setAssignee] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [tasks, setTasks] = useState([]); // Array to store submitted tasks
+  const [status, setStatus] = useState("");
+  const [tasks, setTasks] = useState([]);
 
   const handleAddTask = () => {
     setIsModalOpen(true);
@@ -35,7 +40,6 @@ const AssignTask = () => {
   };
 
   const handleSubmit = () => {
-    // Create a new task object with the submitted data
     const newTask = {
       projectId,
       projectName,
@@ -43,19 +47,82 @@ const AssignTask = () => {
       assignee,
       startDate,
       endDate,
+      status,
     };
 
-    // Add the new task to the tasks array
     setTasks([...tasks, newTask]);
 
-    // Reset the form fields and close the modal
     setProjectId("");
     setProjectName("");
     setTaskDescription("");
     setAssignee("");
     setStartDate("");
     setEndDate("");
+    setStatus("");
     handleCloseModal();
+  };
+  const downloadPDF = () => {
+    const doc = new jsPDF();
+
+    // Set font size for the date and time
+    doc.setFontSize(12);
+
+    // Add the current date and time
+    const currentDateTime = new Date().toLocaleString();
+    const dateText = `Date and Time: ${currentDateTime}`;
+    const headingText = "TMC Tool";
+
+    // Calculate the width of the text to center it on the page
+    const dateTextWidth = doc.getTextWidth(dateText);
+    const headingTextWidth = doc.getTextWidth(headingText);
+    const pageWidth = doc.internal.pageSize.getWidth();
+
+    // Calculate X-coordinate to center-align text
+    const dateTextX = (pageWidth - dateTextWidth) / 2;
+    const headingTextX = (pageWidth - headingTextWidth) / 2;
+
+    // Add the date and time
+    doc.text(dateText, dateTextX, 10);
+
+    // Set font size for the heading
+    doc.setFontSize(16);
+
+    // Add the heading "TMC Tool"
+    doc.text(headingText, headingTextX, 20);
+
+    // Set font size back to 12 for the table
+    doc.setFontSize(12);
+
+    // Add the table
+    autoTable(doc, { html: ".task-table" });
+
+    // Save the PDF
+    doc.save("table.pdf");
+  };
+
+  const downloadExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(tasks);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Task List");
+    XLSX.writeFile(workbook, "task-list.xlsx");
+  };
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: "array" });
+      const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      const excelData = XLSX.utils.sheet_to_json(worksheet);
+
+      // Update the tasks state with the uploaded data
+      setTasks(excelData);
+    };
+
+    reader.readAsArrayBuffer(file);
   };
 
   return (
@@ -64,14 +131,50 @@ const AssignTask = () => {
       <Sidebar />
       <div className="assign-task-container">
         <h1 className="assign-task-text">Assign Task</h1>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleAddTask}
-          className="add-task-button"
-        >
-          Add Task
-        </Button>
+        <div className="row-button">
+          <Button
+            variant="contained"
+            color="error"
+            onClick={downloadPDF}
+            style={{ marginRight: "10px" }}
+          >
+            Download PDF
+          </Button>
+          <Button
+            variant="contained"
+            color="success"
+            onClick={downloadExcel}
+            style={{ marginRight: "10px" }}
+          >
+            downloadExcel
+          </Button>
+          <input
+            type="file"
+            accept=".xlsx, .xls"
+            style={{ display: "none" }}
+            onChange={handleFileUpload}
+            id="fileInput"
+          />
+          <label htmlFor="fileInput">
+            <Button
+              variant="contained"
+              color="secondary"
+              component="span"
+              style={{ marginRight: "10px" }}
+            >
+              Upload Excel
+            </Button>
+          </label>
+
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={handleAddTask}
+            className="add-task-button12"
+          >
+            Add Task
+          </Button>
+        </div>
       </div>
       <Modal
         open={isModalOpen}
@@ -88,7 +191,8 @@ const AssignTask = () => {
             width: 400,
             bgcolor: "background.paper",
             boxShadow: 24,
-            p: 4,
+            p: 5,
+            height: 500,
           }}
         >
           <TextField
@@ -117,19 +221,14 @@ const AssignTask = () => {
             onChange={(e) => setTaskDescription(e.target.value)}
             sx={{ marginBottom: 2 }}
           />
-          <FormControl fullWidth variant="outlined" sx={{ marginBottom: 2 }}>
-            <InputLabel htmlFor="assignee">Assignee</InputLabel>
-            <Select
-              id="assignee"
-              value={assignee}
-              onChange={(e) => setAssignee(e.target.value)}
-              label="Assignee"
-            >
-              <MenuItem value="Sunil">Sunil</MenuItem>
-              <MenuItem value="Pavan">Pavan</MenuItem>
-              <MenuItem value="Rakesh">Rakesh</MenuItem>
-            </Select>
-          </FormControl>
+          <TextField
+            fullWidth
+            label="Assignee"
+            variant="outlined"
+            value={assignee}
+            onChange={(e) => setAssignee(e.target.value)}
+            sx={{ marginBottom: 2 }}
+          />
           <TextField
             fullWidth
             type="date"
@@ -154,6 +253,19 @@ const AssignTask = () => {
             }}
             sx={{ marginBottom: 2 }}
           />
+          <FormControl fullWidth variant="outlined" sx={{ marginBottom: 2 }}>
+            <InputLabel htmlFor="status">Status</InputLabel>
+            <Select
+              id="status"
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              label="Status"
+            >
+              <MenuItem value="Completed">Completed</MenuItem>
+              <MenuItem value="Pending">Pending</MenuItem>
+              <MenuItem value="Ongoing">Ongoing</MenuItem>
+            </Select>
+          </FormControl>
           <Button
             variant="outlined"
             onClick={handleCloseModal}
@@ -178,6 +290,7 @@ const AssignTask = () => {
                 <TableCell>Assignee</TableCell>
                 <TableCell>Start Date</TableCell>
                 <TableCell>End Date</TableCell>
+                <TableCell>Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -189,6 +302,7 @@ const AssignTask = () => {
                   <TableCell>{task.assignee}</TableCell>
                   <TableCell>{task.startDate}</TableCell>
                   <TableCell>{task.endDate}</TableCell>
+                  <TableCell>{task.status}</TableCell>
                 </TableRow>
               ))}
             </TableBody>

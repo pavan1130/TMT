@@ -63,8 +63,44 @@
   text-align: left; /* Left-align data */
 }
 
+/* Additional CSS for the paragraphs in ProjectDetails.module.css */
+
+/* Flex container for the rows of paragraphs */
 .projectsubmit-details-text {
-  position: absolute;
-  top: 190px;
-  left: 40%;
+  display: flex;
+  flex-direction: row;
+}
+
+.class-name-2 {
+  position: relative;
+  top: -220px;
+  left: 20%;
+  font-size: 18px;
+}
+.class-name-3 {
+  position: relative;
+  top: -220px;
+  left: 32%;
+  font-size: 18px;
+}
+
+.class-name-4 {
+  position: relative;
+  top: -220px;
+  left: 53%;
+  font-size: 18px;
+}
+
+.class-name-1 {
+  position: relative;
+  top: -100px;
+  left: -26%;
+  font-size: 18px;
+}
+
+.class-name-5 {
+  position: relative;
+  top: -100px;
+  left: -15%;
+  font-size: 18px;
 }

@@ -1,0 +1,144 @@
+/* ProjectDetails.module.css */
+
+.project-details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(100vh - 190px); /* Adjust height for Navbar and Sidebar */
+}
+
+.project-details-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+  text-align: left;
+  margin-left: -80px;
+}
+
+/* Styling for the "More Project Details" button */
+.project-details-button {
+  background-color: #a0d1ed;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  top: 90px;
+  left: 85%;
+  border-radius: 10px;
+}
+
+/* Hover effect for the button */
+.project-details-button:hover {
+  background-color: #7e92aa;
+}
+
+.project-details-row1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%; /* Adjust width as needed */
+  margin-bottom: 20px; /* Add spacing between rows */
+  position: relative;
+  left: -5%;
+}
+
+.project-details-row2 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%; /* Adjust width as needed */
+  margin-bottom: 20px; /* Add spacing between rows */
+  position: relative;
+  left: -15%;
+}
+
+.project-details-label {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  width: 100%; /* Adjust label column width */
+  text-align: right; /* Right-align labels */
+}
+
+.project-details-data {
+  font-family: "Lato", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  color: #510a17;
+  width: 60%; /* Adjust data column width */
+  text-align: left; /* Left-align data */
+}
+.project-details-text {
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.project-details-button {
+  background-color: #007acc;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.project-details-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.project-details-label {
+  font-weight: bold;
+}
+
+.project-details-data {
+  margin-top: 5px;
+}
+
+/* Styles for the team member cards */
+.projectsubmit-details-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-member-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 10px;
+  width: 300px; /* Adjust the card width as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.team-member-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 10px;
+}
+
+.team-member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.team-member-details {
+  text-align: center;
+}
+
+.class-name-2,
+.class-name-3,
+.class-name-4 {
+  margin: 5px 0;
+}

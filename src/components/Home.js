@@ -23,13 +23,13 @@ const Home = () => {
             <p className={styles["inside-text"]}>Projects</p>
           </Link>
           <Link
-            to="/others"
+            to="/teams"
             className={`${styles["card"]} ${styles["other-card"]}`}
           >
-            <p className={styles["inside-text"]}>Others</p>
+            <p className={styles["inside-text"]}>Teams</p>
           </Link>
           <Link
-            to="/others"
+            to="/others2"
             className={`${styles["card"]} ${styles["other-card1"]}`}
           >
             <p className={styles["inside-text"]}>Others</p>

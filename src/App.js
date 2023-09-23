@@ -9,11 +9,13 @@ import Messages from "./components/Messages";
 import Users from "./components/Users";
 import Settings from "./components/Settings";
 import Projects from "./components/Projects";
-import Others from "./components/Others";
+
 import Comments from "./components/Comments";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Project_Details from "./components/Project_Details";
+import Teams from "./components/Teams";
+import TeamDetails from "./components/TeamDetails";
 function App() {
   return (
     <Router>
@@ -22,7 +24,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/others" element={<Others />} />
+        <Route path="/teams" element={<Teams />} />
         <Route path="/assign-task" element={<AssignTask />} />
         <Route path="/view-task" element={<ViewTask />} />
         <Route path="/messages" element={<Messages />} />
@@ -32,6 +34,10 @@ function App() {
         <Route
           path="/projects/:projectId/:projectName/:projectDate"
           element={<Project_Details />}
+        />
+        <Route
+          path="/teams/:projectId/:projectName"
+          element={<TeamDetails />}
         />
       </Routes>
     </Router>
