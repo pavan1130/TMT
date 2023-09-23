@@ -39,20 +39,19 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 30%; /* Adjust width as needed */
+  width: 20%; /* Adjust width as needed */
   margin-bottom: 20px; /* Add spacing between rows */
   position: relative;
-  left: -5%;
+  left: 5%;
 }
-
 .project-details-row2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 30%; /* Adjust width as needed */
+  width: 20%; /* Adjust width as needed */
   margin-bottom: 20px; /* Add spacing between rows */
   position: relative;
-  left: -15%;
+  left: 5%;
 }
 
 .project-details-label {
@@ -72,73 +71,66 @@
   width: 60%; /* Adjust data column width */
   text-align: left; /* Left-align data */
 }
-.project-details-text {
-  font-size: 24px;
-  margin-top: 20px;
-}
-
-.project-details-button {
-  background-color: #007acc;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.project-details-container {
-  display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  padding: 20px;
-}
-
-.project-details-label {
-  font-weight: bold;
-}
-
-.project-details-data {
-  margin-top: 5px;
-}
-
-/* Styles for the team member cards */
-.projectsubmit-details-container {
+/* Center-align the container */
+.team-member-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* Make the cards smaller */
 .team-member-card {
-  border: 1px solid #ccc;
-  padding: 16px;
-  margin: 10px;
-  width: 300px; /* Adjust the card width as needed */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 5px; /* Reduce padding to reduce card height */
+  width: calc(33.33% - 30px); /* Adjust the width as needed for your layout */
+  max-width: 300px; /* Set a maximum width for the cards */
+  text-align: center; /* Center-align text within the card */
+  float: left; /* Float the cards left to ensure 3 cards per row */
 }
 
-.team-member-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: 0 auto 10px;
-}
-
+/* Team member image */
 .team-member-image img {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 150px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
+/* Team member details */
 .team-member-details {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align items horizontally */
   text-align: center;
+  width: 60vh; /* Center-align text within the container */
 }
 
-.class-name-2,
-.class-name-3,
+/* Style for the strong element within team member details */
+.team-member-details strong {
+  color: #333;
+}
+
+/* Additional styling for class-name-2, class-name-3, and class-name-4 */
+.class-name-2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.class-name-3 {
+  font-size: 14px; /* Adjust font size as needed */
+  margin-bottom: 3px;
+}
+
 .class-name-4 {
-  margin: 5px 0;
+  font-size: 16px;
+  margin-top: 10px;
+  position: relative;
+  left: -30%;
+  width: 150vh;
 }

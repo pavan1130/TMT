@@ -1,5 +1,3 @@
-// TeamDetails.js
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
@@ -44,7 +42,7 @@ function TeamDetails() {
           <p className={styles["project-details-data"]}>{projectName}</p>
         </div>
       </div>
-      {/* Render the DetailsPopup component when isPopupOpen is true */}
+      {/* Render the TeamDetailsPopup component when isPopupOpen is true */}
       {isPopupOpen && (
         <TeamDetailsPopup
           project={projectId}
@@ -53,7 +51,9 @@ function TeamDetails() {
         />
       )}
       {/* Display team members' data as cards */}
-      <div className={styles["projectsubmit-details-container"]}>
+      <div
+        className={`${styles["projectsubmit-details-container"]} ${styles["team-member-container"]}`}
+      >
         {teamMembers.map((submittedData, index) => (
           <div key={index} className={styles["team-member-card"]}>
             <div className={styles["team-member-image"]}>
@@ -61,6 +61,7 @@ function TeamDetails() {
                 <img
                   src={URL.createObjectURL(submittedData.image)}
                   alt="Team Member"
+                  className={styles["team-member-image"]}
                 />
               )}
             </div>
@@ -71,11 +72,10 @@ function TeamDetails() {
               <p className={styles["class-name-3"]}>
                 <strong>UIN Number:</strong> {submittedData.uinNumber}
               </p>
-              <p className={styles["class-name-4"]}>
-                <strong>Job Role:</strong> {submittedData.jobRole}
-              </p>
+              <h4 className={styles["class-name-4"]}>
+                Job Role: {submittedData.jobRole}
+              </h4>
             </div>
-            {/* Hide roles and responsibilities */}
           </div>
         ))}
       </div>
