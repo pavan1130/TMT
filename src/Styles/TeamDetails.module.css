@@ -39,19 +39,17 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 20%; /* Adjust width as needed */
-  margin-bottom: 20px; /* Add spacing between rows */
+  width: 100%;
+  margin-bottom: 20px;
   position: relative;
-  left: 5%;
 }
 .project-details-row2 {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 20%; /* Adjust width as needed */
-  margin-bottom: 20px; /* Add spacing between rows */
+  width: 100%;
+  margin-bottom: 20px;
   position: relative;
-  left: 5%;
 }
 
 .project-details-label {
@@ -75,8 +73,7 @@
 .projectsubmit-details-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 20px;
+  justify-content: center;
 }
 
 .team-member-container {
@@ -88,51 +85,49 @@
   left: 21%;
   top: -160px;
 }
-
-/* Card styles */
+/* Team Member Card */
 .team-member-card {
-  display: flex;
-  align-items: center;
+  background-color: #ffffff;
   border: 1px solid #e0e0e0;
-  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 10px;
-  border-radius: 5px;
-  background-color: #fff;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
 }
 
-.team-member-image {
-  width: 80px;
-  height: 80px;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-right: 20px;
-}
-
+/* Team Member Image */
 .team-member-image img {
   max-width: 100%;
   height: auto;
+  border-radius: 50%;
 }
 
-/* Detail styles */
+/* Team Member Details */
 .team-member-details {
-  flex: 1;
+  margin-top: 10px;
 }
 
-.class-name-2,
-.class-name-3,
-.class-name-4 {
-  margin: 0;
-  padding: 0;
+/* Team Member Name */
+.team-member-name {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.class-name-2,
-.class-name-3 {
-  font-size: 14px;
-  color: #555;
-}
-
-.class-name-4 {
+/* Team Member UIN Number */
+.team-member-uin {
   font-size: 16px;
-  font-weight: 600;
-  color: #333;
+  color: #666666;
+}
+
+/* Team Member Job Role */
+.team-member-job-role {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.team-member-responsibilities {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #333333;
 }

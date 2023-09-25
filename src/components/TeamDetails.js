@@ -66,15 +66,19 @@ function TeamDetails() {
               )}
             </div>
             <div className={styles["team-member-details"]}>
-              <p className={styles["class-name-2"]}>
+              <p className={styles["team-member-name"]}>
                 <strong>Name:</strong> {submittedData.name}
               </p>
-              <p className={styles["class-name-3"]}>
+              <p className={styles["team-member-uin"]}>
                 <strong>UIN Number:</strong> {submittedData.uinNumber}
               </p>
-              <h4 className={styles["class-name-4"]}>
-                Job Role: {submittedData.jobRole}
-              </h4>
+              <p className={styles["team-member-job-role"]}>
+                <strong>Job Role:</strong> {submittedData.jobRole}
+              </p>
+              <p className={styles["team-member-responsibilities"]}>
+                <strong>Roles and Responsibilities:</strong>{" "}
+                {submittedData.responsibilities}
+              </p>
             </div>
           </div>
         ))}
