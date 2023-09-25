@@ -71,66 +71,68 @@
   width: 60%; /* Adjust data column width */
   text-align: left; /* Left-align data */
 }
-/* Center-align the container */
-.team-member-container {
+/* Container styles */
+.projectsubmit-details-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 20px;
 }
 
-/* Make the cards smaller */
-.team-member-card {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  padding: 5px; /* Reduce padding to reduce card height */
-  width: calc(33.33% - 30px); /* Adjust the width as needed for your layout */
-  max-width: 300px; /* Set a maximum width for the cards */
-  text-align: center; /* Center-align text within the card */
-  float: left; /* Float the cards left to ensure 3 cards per row */
-}
-
-/* Team member image */
-.team-member-image img {
-  width: 95%;
-  height: 150px;
-  object-fit: cover;
+.team-member-container {
+  background-color: #f9f9f9;
   border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 75%;
+  position: relative;
+  left: 21%;
+  top: -160px;
 }
 
-/* Team member details */
-.team-member-details {
-  margin-top: 5px;
+/* Card styles */
+.team-member-card {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align items horizontally */
-  text-align: center;
-  width: 60vh; /* Center-align text within the container */
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: #fff;
 }
 
-/* Style for the strong element within team member details */
-.team-member-details strong {
-  color: #333;
+.team-member-image {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20px;
 }
 
-/* Additional styling for class-name-2, class-name-3, and class-name-4 */
-.class-name-2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 3px;
+.team-member-image img {
+  max-width: 100%;
+  height: auto;
 }
 
+/* Detail styles */
+.team-member-details {
+  flex: 1;
+}
+
+.class-name-2,
+.class-name-3,
+.class-name-4 {
+  margin: 0;
+  padding: 0;
+}
+
+.class-name-2,
 .class-name-3 {
-  font-size: 14px; /* Adjust font size as needed */
-  margin-bottom: 3px;
+  font-size: 14px;
+  color: #555;
 }
 
 .class-name-4 {
   font-size: 16px;
-  margin-top: 10px;
-  position: relative;
-  left: -30%;
-  width: 150vh;
+  font-weight: 600;
+  color: #333;
 }
