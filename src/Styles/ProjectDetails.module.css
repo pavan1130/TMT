@@ -35,16 +35,30 @@
   background-color: #7e92aa;
 }
 
-.project-details-row {
+.project-details-row1 {
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  width: 20%; /* Adjust width as needed */
+  width: 60%; /* Adjust width as needed */
   margin-bottom: 20px; /* Add spacing between rows */
   position: relative;
-  left: 5%;
+  left: 10%;
 }
 
+.project-details-row2 {
+  display: flex;
+
+  align-items: center;
+  width: 100%; /* Adjust width as needed */
+  margin-bottom: 20px; /* Add spacing between rows */
+  position: relative;
+}
+.project-details-row3 {
+  display: flex;
+  align-items: center;
+  width: 60%; /* Adjust width as needed */
+  margin-bottom: 20px; /* Add spacing between rows */
+  position: relative;
+}
 .project-details-label {
   font-family: "Lato", sans-serif;
   font-weight: bold;

@@ -37,15 +37,15 @@ function Project_Details() {
         More Project Details
       </button>
       <div className={styles["project-details-container"]}>
-        <div className={styles["project-details-row"]}>
+        <div className={styles["project-details-row1"]}>
           <p className={styles["project-details-label"]}>Project ID:</p>
           <p className={styles["project-details-data"]}>{projectId}</p>
         </div>
-        <div className={styles["project-details-row"]}>
+        <div className={styles["project-details-row2"]}>
           <p className={styles["project-details-label"]}>Project Name:</p>
           <p className={styles["project-details-data"]}>{projectName}</p>
         </div>
-        <div className={styles["project-details-row"]}>
+        <div className={styles["project-details-row3"]}>
           <p className={styles["project-details-label"]}>Date:</p>
           <p className={styles["project-details-data"]}>{projectDate}</p>
         </div>

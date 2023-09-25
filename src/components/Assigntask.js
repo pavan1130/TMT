@@ -125,6 +125,14 @@ const AssignTask = () => {
     reader.readAsArrayBuffer(file);
   };
 
+  const [searchProjectId, setSearchProjectId] = useState("");
+  const [searchProjectName, setSearchProjectName] = useState("");
+  const filteredTasks = tasks.filter((task) => {
+    return (
+      task.projectId.toLowerCase().includes(searchProjectId.toLowerCase()) &&
+      task.projectName.toLowerCase().includes(searchProjectName.toLowerCase())
+    );
+  });
   return (
     <div className="form-container">
       <NavigationBar />
@@ -188,20 +196,22 @@ const AssignTask = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: 400,
+            width: 380,
+            height: 500,
             bgcolor: "background.paper",
             boxShadow: 24,
             p: 5,
-            height: 500,
+            borderRadius: 5,
           }}
         >
+          <h2 id="modal-modal-title">Add Task</h2>
           <TextField
             fullWidth
             label="Project ID"
             variant="outlined"
             value={projectId}
             onChange={(e) => setProjectId(e.target.value)}
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           />
           <TextField
             fullWidth
@@ -209,7 +219,7 @@ const AssignTask = () => {
             variant="outlined"
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           />
           <TextField
             fullWidth
@@ -219,7 +229,7 @@ const AssignTask = () => {
             rows={3}
             value={taskDescription}
             onChange={(e) => setTaskDescription(e.target.value)}
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           />
           <TextField
             fullWidth
@@ -227,7 +237,7 @@ const AssignTask = () => {
             variant="outlined"
             value={assignee}
             onChange={(e) => setAssignee(e.target.value)}
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           />
           <TextField
             fullWidth
@@ -239,7 +249,7 @@ const AssignTask = () => {
             InputLabelProps={{
               shrink: true,
             }}
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           />
           <TextField
             fullWidth
@@ -251,7 +261,7 @@ const AssignTask = () => {
             InputLabelProps={{
               shrink: true,
             }}
-            sx={{ marginBottom: 2 }}
+            sx={{ marginBottom: 1 }}
           />
           <FormControl fullWidth variant="outlined" sx={{ marginBottom: 2 }}>
             <InputLabel htmlFor="status">Status</InputLabel>
@@ -276,10 +286,27 @@ const AssignTask = () => {
           <Button variant="contained" color="primary" onClick={handleSubmit}>
             Submit
           </Button>
+                  
         </Box>
       </Modal>
       <div className="task-details-container">
         <h2 className="task-heading">Task Details</h2>
+        <div className="search-inputs">
+          <TextField
+            label="Search Project ID"
+            variant="outlined"
+            value={searchProjectId}
+            onChange={(e) => setSearchProjectId(e.target.value)}
+            sx={{ marginRight: 2 }}
+          />
+          <TextField
+            label="Search Project Name"
+            variant="outlined"
+            value={searchProjectName}
+            onChange={(e) => setSearchProjectName(e.target.value)}
+          />
+                  
+        </div>
         <TableContainer>
           <Table className="task-table">
             <TableHead>
@@ -294,7 +321,7 @@ const AssignTask = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {tasks.map((task, index) => (
+              {filteredTasks.map((task, index) => (
                 <TableRow key={index}>
                   <TableCell>{task.projectId}</TableCell>
                   <TableCell>{task.projectName}</TableCell>
@@ -305,6 +332,7 @@ const AssignTask = () => {
                   <TableCell>{task.status}</TableCell>
                 </TableRow>
               ))}
+                  
             </TableBody>
           </Table>
         </TableContainer>

@@ -29,7 +29,7 @@ const AddProjectPopup = ({ onClose, onAddProject }) => {
 
   return (
     <div className="popup-add">
-      <div className="popup-content-add">
+      <div className="popup-content-add1">
         <div className="popup-header-add">
           <button className="popup-close-add" onClick={onClose}>
             X

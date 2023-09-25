@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavigationBar from "./NavigationBar";
+
 import Sidebar from "./Sidebar";
 import styles from "../Styles/TeamDetails.module.css";
 import TeamDetailsPopup from "./TeamDetailsPopup";
@@ -26,8 +26,7 @@ function TeamDetails() {
 
   return (
     <div>
-      {/* <NavigationBar />
-      <Sidebar /> */}
+      <Sidebar />
       <h2 className={styles["project-details-text"]}>Team Members</h2>
       <button className={styles["project-details-button"]} onClick={openPopup}>
         Add Team Member
@@ -70,7 +69,7 @@ function TeamDetails() {
                 <strong>Name:</strong> {submittedData.name}
               </p>
               <p className={styles["team-member-uin"]}>
-                <strong>UIN Number:</strong> {submittedData.uinNumber}
+                <strong>UIN No:</strong> {submittedData.uinNumber}
               </p>
               <p className={styles["team-member-job-role"]}>
                 <strong>Job Role:</strong> {submittedData.jobRole}
