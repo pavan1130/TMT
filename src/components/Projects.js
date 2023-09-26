@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom"; // Import Link and useParams
+import { Link } from "react-router-dom"; // Import Link and useParams
 import AddProjectPopup from "./AddProjectPopup";
 
 import "../Styles/Projects.css";
@@ -10,7 +10,6 @@ import "../Styles/App.css";
 const Projects = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [projects, setProjects] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
 
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -22,14 +21,6 @@ const Projects = () => {
 
   const onAddProject = (newProject) => {
     setProjects([...projects, newProject]);
-  };
-
-  const openDetailsPopup = (project) => {
-    setSelectedProject(project);
-  };
-
-  const closeDetailsPopup = () => {
-    setSelectedProject(null);
   };
 
   return (

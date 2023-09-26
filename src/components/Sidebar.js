@@ -1,21 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   FaHome,
   FaTasks,
   FaEye,
   FaEnvelope,
-  FaUsers,
-  FaCog,
   FaSignOutAlt,
-  FaMoon,
 } from "react-icons/fa";
 import {
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Switch,
   Button,
   Typography,
   Divider,
@@ -24,13 +20,6 @@ import { styled } from "@mui/material/styles";
 import "../Styles/Sidebar.css";
 
 const Sidebar = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    // Add code to toggle dark mode styles
-  };
-
   const CustomListItemIcon = styled(ListItemIcon)({
     minWidth: "40px",
   });
@@ -39,7 +28,7 @@ const Sidebar = () => {
     window.open("https://glistening-faun-2f7fab.netlify.app/", "_blank");
   };
   return (
-    <div className={`sidebar ${darkMode ? "dark" : ""}`}>
+    <div className={`sidebar `}>
       <div className="sidebar_header">
         <br />
         <Typography variant="h6" color="black">

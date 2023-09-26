@@ -3,7 +3,6 @@ import "../Styles/TeamPopup.css";
 const TeamPopup = ({ onClose, onAddProject }) => {
   const [projectName, setProjectName] = useState("");
   const [projectId, setProjectId] = useState("");
-  const [projectDate, setProjectDate] = useState("");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
