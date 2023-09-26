@@ -6,7 +6,9 @@
   background-color: #fff; /* Adjust the background color as needed */
   color: #fff; /* Text color */
 }
-
+.h2-navbar {
+  color: #db0906;
+}
 .search_bar {
   align-items: center;
   max-width: 100px; /* Adjust the search bar width as needed */

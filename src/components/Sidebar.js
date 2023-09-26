@@ -25,7 +25,7 @@ const Sidebar = () => {
   });
   const startChatSession = () => {
     // Open the link in a new tab or window when the button is clicked
-    window.open("https://glistening-faun-2f7fab.netlify.app/", "_blank");
+    window.open("https://darling-flan-0a4ab3.netlify.app/", "_blank");
   };
   return (
     <div className={`sidebar `}>

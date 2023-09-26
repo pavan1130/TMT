@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 
 function Signup() {
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
-    confirmpassword: "",
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,7 @@ function Signup() {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:5000/signup", {
+      const response = await fetch("http://localhost:3000/api/users/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,6 @@ function Signup() {
       console.error(error);
     }
   };
-
   const handleGoogleSignIn = () => {
     // Perform Google sign-in logic here
     // You might use a library like Firebase for this purpose
@@ -62,6 +61,17 @@ function Signup() {
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
           <div className={styles["form-group-signup"]}>
+            <label>Username</label>
+            <input
+              type="text"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              required
+              className={styles["input-field1"]}
+            />
+          </div>
+          <div className={styles["form-group-signup"]}>
             <label>Email</label>
             <input
               type="email"
@@ -72,23 +82,12 @@ function Signup() {
               className={styles["input-field1"]}
             />
           </div>
-          <div className={styles["form-group-signup"]}>
-            <label>Password</label>
+          <div className={styles["form-groupsignup"]}>
+            <label className={styles["cnp"]}>Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
-              onChange={handleChange}
-              required
-              className={styles["input-field1"]}
-            />
-          </div>
-          <div className={styles["form-groupsignup"]}>
-            <label className={styles["cnp"]}>Confirm Password</label>
-            <input
-              type="password"
-              name="confirmpassword"
-              value={formData.confirmpassword}
               onChange={handleChange}
               required
               className={styles["input-field3"]}
@@ -118,7 +117,7 @@ function Signup() {
           </button>
           <div className={styles["Signin-text"]}>
             <p className={styles["Signin-text"]}>
-              Don’t have an account? <a href="/">Sign In</a>
+              Already have an account? <a href="/">Sign In</a>
             </p>
           </div>
         </div>
