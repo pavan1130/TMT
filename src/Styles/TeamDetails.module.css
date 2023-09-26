@@ -5,7 +5,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100vh - 190px); /* Adjust height for Navbar and Sidebar */
 }
 
 .project-details-text {
@@ -39,9 +38,10 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
+  width: 50%;
+  left: 10%;
   position: relative;
+  top: 120px;
 }
 .project-details-row2 {
   display: flex;
@@ -50,6 +50,7 @@
   width: 100%;
   margin-bottom: 20px;
   position: relative;
+  top: 130px;
 }
 
 .project-details-label {
@@ -68,6 +69,8 @@
   color: #510a17;
   width: 60%; /* Adjust data column width */
   text-align: left; /* Left-align data */
+  position: relative;
+  left: -5%;
 }
 /* Container styles */
 .projectsubmit-details-container {
@@ -86,7 +89,7 @@
   padding: 20px;
   position: relative;
   left: 10%;
-  top: -220px;
+  top: -20px;
 }
 
 .team-member-card {
@@ -133,7 +136,7 @@
   font-weight: bold;
   position: relative;
   top: -90px;
-  left: 35%;
+  left: 25%;
 }
 
 /* Team Member UIN Number */
@@ -142,8 +145,8 @@
   color: #666666;
   margin-bottom: 10px;
   position: relative;
-  top: -300px;
-  left: 35%;
+  top: -330px;
+  left: 25%;
 }
 
 /* Team Member Job Role */
@@ -152,7 +155,8 @@
   font-style: italic;
   color: #333333;
   position: relative;
-  top: -380px;
+  top: -450px;
+  left: -10%;
 }
 
 /* Team Member Responsibilities */
@@ -160,5 +164,6 @@
   font-size: 14px;
   color: #333333;
   position: relative;
-  top: -500px;
+  top: -600px;
+  left: -10%;
 }

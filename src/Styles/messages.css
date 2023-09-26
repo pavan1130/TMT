@@ -1,76 +1,25 @@
 /* messages.css */
 
-/* Style for the entire Messages component container */
+/* Center the button horizontally and vertically */
 .messages-container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20px;
-  background-color: #f0f0f0;
+  height: 100vh; /* Optional: Set the container's height to occupy the full viewport height */
 }
 
-/* Style for the heading */
-.messages-container h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-  color: #333; /* Set your desired text color */
+/* Style the button */
+.start-chat-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue background color */
+  color: white; /* Text color */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add some border radius for rounded corners */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 18px; /* Font size */
 }
 
-/* Style for the message list */
-.message-list {
-  list-style: none;
-  padding: 0;
-  position: relative;
-  left: -5%;
-  top: 50px;
-}
-
-/* Style for each individual message item */
-.message-item {
-  display: flex;
-  align-items: flex-start;
-  max-width: 80%; /* Adjust as needed */
-  margin-bottom: 20px;
-}
-
-/* Style for the user profile image */
-.user-profile img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-/* Style for the message content */
-.message-content {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Style for the username */
-.username {
-  font-weight: bold;
-  color: #333; /* Set your desired text color */
-}
-
-/* Style for the message text */
-.message-text {
-  font-size: 16px;
-  color: #000; /* Set your desired text color */
-  background-color: #e1ffc7; /* Set message background color */
-  border-radius: 10px; /* Slightly rounded corners for message items */
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-  height: 50px;
-}
-
-/* Style for the sender's message (aligns to the right) */
-.sender-message {
-  align-self: flex-end;
-  background-color: #dcf8c6; /* Set sender's message background color */
-}
-
-/* Style for the sender's username */
-.sender-username {
-  text-align: right;
+/* Style the button on hover */
+.start-chat-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }

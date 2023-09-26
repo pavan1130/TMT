@@ -125,12 +125,12 @@ const AssignTask = () => {
     reader.readAsArrayBuffer(file);
   };
 
-  const [searchProjectId, setSearchProjectId] = useState("");
-  const [searchProjectName, setSearchProjectName] = useState("");
+  const [search, setSearch] = useState("");
   const filteredTasks = tasks.filter((task) => {
+    const searchValue = search.toLowerCase();
     return (
-      task.projectId.toLowerCase().includes(searchProjectId.toLowerCase()) &&
-      task.projectName.toLowerCase().includes(searchProjectName.toLowerCase())
+      task.projectId.toLowerCase().includes(searchValue) ||
+      task.projectName.toLowerCase().includes(searchValue)
     );
   });
   return (
@@ -212,6 +212,7 @@ const AssignTask = () => {
             value={projectId}
             onChange={(e) => setProjectId(e.target.value)}
             sx={{ marginBottom: 1 }}
+            required
           />
           <TextField
             fullWidth
@@ -220,6 +221,7 @@ const AssignTask = () => {
             value={projectName}
             onChange={(e) => setProjectName(e.target.value)}
             sx={{ marginBottom: 1 }}
+            required
           />
           <TextField
             fullWidth
@@ -293,17 +295,10 @@ const AssignTask = () => {
         <h2 className="task-heading">Task Details</h2>
         <div className="search-inputs">
           <TextField
-            label="Search Project ID"
+            label="Search by Project ID or Name"
             variant="outlined"
-            value={searchProjectId}
-            onChange={(e) => setSearchProjectId(e.target.value)}
-            sx={{ marginRight: 2 }}
-          />
-          <TextField
-            label="Search Project Name"
-            variant="outlined"
-            value={searchProjectName}
-            onChange={(e) => setSearchProjectName(e.target.value)}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
           />
                   
         </div>

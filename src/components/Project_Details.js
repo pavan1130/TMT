@@ -32,11 +32,11 @@ function Project_Details() {
     <div>
       <NavigationBar />
       <Sidebar />
-      <h2 className={styles["project-details-text"]}>Project Details</h2>
-      <button className={styles["project-details-button"]} onClick={openPopup}>
+      <h2 className={styles["project-details-text1"]}>Project Details</h2>
+      <button className={styles["project-details-button1"]} onClick={openPopup}>
         More Project Details
       </button>
-      <div className={styles["project-details-container"]}>
+      <div className={styles["project-details-container1"]}>
         <div className={styles["project-details-row1"]}>
           <p className={styles["project-details-label"]}>Project ID:</p>
           <p className={styles["project-details-data"]}>{projectId}</p>

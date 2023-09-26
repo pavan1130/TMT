@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import TeamPopup from "./TeamPopup";
 
 import "../Styles/Teams.css";
@@ -9,7 +9,6 @@ import Sidebar from "./Sidebar";
 const Teams = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [Teams, setTeams] = useState([]);
-  const [selectedProject, setSelectedProject] = useState(null);
 
   const openPopup = () => {
     setIsPopupOpen(true);
@@ -42,7 +41,6 @@ const Teams = () => {
           >
             <h3 className="team-name">{project.name}</h3>
             <p className="team-id">ID: {project.id}</p>
-            <h4 className="team-membes"></h4>
           </Link>
         ))}
       </div>

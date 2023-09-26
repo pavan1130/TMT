@@ -6,10 +6,7 @@ import Home from "./components/Home";
 import AssignTask from "./components/Assigntask";
 import ViewTask from "./components/ViewTask";
 import Messages from "./components/Messages";
-import Users from "./components/Users";
-import Settings from "./components/Settings";
 import Projects from "./components/Projects";
-
 import Comments from "./components/Comments";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -27,10 +24,9 @@ function App() {
         <Route path="/teams" element={<Teams />} />
         <Route path="/assign-task" element={<AssignTask />} />
         <Route path="/view-task" element={<ViewTask />} />
-        <Route path="/messages" element={<Messages />} />
+        {/* <Route path="/messages" element={<Messages />} /> */}
         <Route path="/comments" element={<Comments />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/settings" element={<Settings />} />
+
         <Route
           path="/projects/:projectId/:projectName/:projectDate"
           element={<Project_Details />}

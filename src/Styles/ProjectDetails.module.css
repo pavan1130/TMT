@@ -1,14 +1,14 @@
 /* ProjectDetails.module.css */
 
-.project-details-container {
+.project-details-container1 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  height: calc(100vh - 190px); /* Adjust height for Navbar and Sidebar */
+  height: calc(100vh - 190px);
 }
 
-.project-details-text {
+.project-details-text1 {
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
@@ -18,7 +18,7 @@
 }
 
 /* Styling for the "More Project Details" button */
-.project-details-button {
+.project-details-button1 {
   background-color: #a0d1ed;
   color: #000000;
   border: none;
@@ -38,10 +38,10 @@
 .project-details-row1 {
   display: flex;
   align-items: center;
-  width: 60%; /* Adjust width as needed */
+  width: 80%; /* Adjust width as needed */
   margin-bottom: 20px; /* Add spacing between rows */
   position: relative;
-  left: 10%;
+  left: 13%;
 }
 
 .project-details-row2 {
@@ -73,8 +73,10 @@
   font-weight: bold;
   font-size: 18px;
   color: #510a17;
-  width: 60%; /* Adjust data column width */
+  width: 80%; /* Adjust data column width */
   text-align: left; /* Left-align data */
+  position: relative;
+  left: -10%;
 }
 
 /* Additional CSS for the paragraphs in ProjectDetails.module.css */
@@ -108,7 +110,7 @@
 .class-name-1 {
   position: relative;
   top: -100px;
-  left: -26%;
+  left: -24%;
   font-size: 18px;
 }
 

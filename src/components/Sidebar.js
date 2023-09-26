@@ -34,7 +34,10 @@ const Sidebar = () => {
   const CustomListItemIcon = styled(ListItemIcon)({
     minWidth: "40px",
   });
-
+  const startChatSession = () => {
+    // Open the link in a new tab or window when the button is clicked
+    window.open("https://glistening-faun-2f7fab.netlify.app/", "_blank");
+  };
   return (
     <div className={`sidebar ${darkMode ? "dark" : ""}`}>
       <div className="sidebar_header">
@@ -64,24 +67,14 @@ const Sidebar = () => {
             </CustomListItemIcon>
             <ListItemText primary="View Task" />
           </ListItem>
-          <ListItem component={Link} to="/messages" button>
-            <CustomListItemIcon>
-              <FaEnvelope />
-            </CustomListItemIcon>
-            <ListItemText primary="Messages" />
-          </ListItem>
-          <ListItem component={Link} to="/users" button>
-            <CustomListItemIcon>
-              <FaUsers />
-            </CustomListItemIcon>
-            <ListItemText primary="Users" />
-          </ListItem>
-          <ListItem component={Link} to="/settings" button>
-            <CustomListItemIcon>
-              <FaCog />
-            </CustomListItemIcon>
-            <ListItemText primary="Settings" />
-          </ListItem>
+          <a onClick={startChatSession}>
+            <ListItem button>
+              <CustomListItemIcon>
+                <FaEnvelope />
+              </CustomListItemIcon>
+              <ListItemText primary="Messages" />
+            </ListItem>
+          </a>
         </List>
       </div>
 

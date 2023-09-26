@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "../Styles/Signup.module.css"; // Import the CSS module
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -57,10 +58,10 @@ function Signup() {
       <div className={styles["background-image"]}></div>
 
       {/* Signup Container */}
-      <div className={styles["signup-container"]}>
+      <div className={styles["signup-container1"]}>
         <h1>Sign Up</h1>
         <form onSubmit={handleSubmit}>
-          <div className={styles["form-group"]}>
+          <div className={styles["form-group-signup"]}>
             <label>Email</label>
             <input
               type="email"
@@ -68,10 +69,10 @@ function Signup() {
               value={formData.email}
               onChange={handleChange}
               required
-              className={styles["input-field"]}
+              className={styles["input-field1"]}
             />
           </div>
-          <div className={styles["form-group"]}>
+          <div className={styles["form-group-signup"]}>
             <label>Password</label>
             <input
               type="password"
@@ -79,25 +80,27 @@ function Signup() {
               value={formData.password}
               onChange={handleChange}
               required
-              className={styles["input-field"]}
+              className={styles["input-field1"]}
             />
           </div>
-          <div className={styles["form-group"]}>
-            <label>Confirm Password</label>
+          <div className={styles["form-groupsignup"]}>
+            <label className={styles["cnp"]}>Confirm Password</label>
             <input
               type="password"
               name="confirmpassword"
               value={formData.confirmpassword}
               onChange={handleChange}
               required
-              className={styles["input-field"]}
+              className={styles["input-field3"]}
             />
           </div>
-          <button className={styles["submit-button"]} onClick={handleSubmit}>
-            Sign Up
+          <button className={styles["submit-button1"]} onClick={handleSubmit}>
+            <Link to="/" className={styles["s"]}>
+              Sign Up
+            </Link>
           </button>
         </form>
-        <div className={styles["horizontal-line-container"]}>
+        <div className={styles["horizontal-line-container1"]}>
           <div className={styles["horizontal-line"]}></div>
           <div className={styles.or}>
             <span>OR</span>
